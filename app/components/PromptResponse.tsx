@@ -20,7 +20,7 @@ const PromptResponse = ({ messages, isLoading }: Props) => {
     <div className="h-auto flex flex-col flex-auto w-full p-8 space-y-4">
       {messages.length === 0 ? (
         <p className="text-gray-500">
-          Hello, I'm your Travel Assistant. How can I help you today?
+          Hello, I am your Travel Assistant. How can I help you today?
         </p>
       ) : (
         messages.map((message, index) => (
