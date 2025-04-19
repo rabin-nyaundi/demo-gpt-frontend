@@ -10,6 +10,7 @@
  */
 
 import React, { useEffect, useState, useRef } from "react";
+import { LuSendHorizontal } from "react-icons/lu";
 import { getBackendUrl } from "../lib/utils";
 
 type Message = {
@@ -89,9 +90,10 @@ const TextArea = ({
       <button
         onClick={sendMessage}
         disabled={isLoading}
-        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm right-2 bottom-0 absolute disabled:opacity-50"
+        className="flex gap-1 bg-gray-700 items-center hover:bg-blue-700 text-white border border-gray-300 px-4 py-2 rounded-md text-sm right-3 bottom-1 absolute disabled:opacity-50"
       >
         {isLoading ? "Sending..." : "Send"}
+        <LuSendHorizontal />
       </button>
       <div ref={chatEndRef} />
     </div>
