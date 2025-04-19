@@ -19,7 +19,7 @@ const PromptResponse = ({ messages, isLoading }: Props) => {
   return (
     <div className="h-auto flex flex-col flex-auto w-full p-8 space-y-4">
       {messages.length === 0 ? (
-        <p className="text-gray-500">No messages yet. Start typing below!</p>
+        <p className="text-gray-500">How can I help you today? Start typing!</p>
       ) : (
         messages.map((message, index) => (
           <div
@@ -31,7 +31,7 @@ const PromptResponse = ({ messages, isLoading }: Props) => {
             }`}
           >
             {message.content
-              .replace(/\*\*(.+?)\*\*:\s*/g, "**$1**:\n") // replace whatever that matches **Text** with **Text** and \n for new line
+              .replace(/\*\*(.+?)\*\*:\s*/g, "**$1**\n") // replace whatever that matches **Text** with **Text** and \n for new line
               .split("\n")
               .map((line, i) => {
                 const isLabelLine = line.match(/^\*\*(.+?)\*\*:/); // match **Text:** in that order
